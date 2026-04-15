@@ -24,3 +24,15 @@ class Paciente:
         else:
             print("Error: El paciente {self.nombre_paciente} ya tiene el máximo de 3 citas.")
             return False
+        
+class GestorClinica:
+    def __init__(self):
+        self.diccionario_pacientes = {} 
+
+    def programar_cita(self, id_paciente, objeto_cita, nombre_paciente):
+        if id_paciente not in self.diccionario_pacientes:
+            self.diccionario_pacientes[id_paciente] = Paciente(nombre_paciente, id_paciente)
+            
+        paciente = self.diccionario_pacientes[id_paciente]
+        exito, mensaje = paciente.agregar_cita(objeto_cita)
+        return exito, mensaje
