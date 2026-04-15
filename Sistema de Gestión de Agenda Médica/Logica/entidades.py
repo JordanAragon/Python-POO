@@ -19,11 +19,9 @@ class Paciente:
     def agregar_cita(self, nueva_cita):
         if len(self.lista_citas) < 3:
             self.lista_citas.append(nueva_cita)
-            print("Cita agendada con éxito para el paciente {self.nombre_paciente}.")
-            return True
+            return True, f"Cita agendada con éxito para el paciente {self.nombre_paciente}."
         else:
-            print("Error: El paciente {self.nombre_paciente} ya tiene el máximo de 3 citas.")
-            return False
+            return False, f"Error: El paciente {self.nombre_paciente} ya tiene el máximo de 3 citas."
         
 class GestorClinica:
     def __init__(self):
