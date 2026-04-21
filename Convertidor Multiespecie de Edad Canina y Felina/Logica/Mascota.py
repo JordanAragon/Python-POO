@@ -31,3 +31,5 @@ class Perro(Mascota):
             return self.edad_cronologica * 7
         else:
             return 0
+
+        
